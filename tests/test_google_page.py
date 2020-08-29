@@ -1,9 +1,9 @@
 
 from selenium.webdriver.support.select import Select
-from selenium import webdriver
-import pytest
 from page_objects.google_page import GooglePage
 from utility.BaseClass import BaseClass
+from selenium import webdriver
+import pytest
 
 class TestGooglePage(BaseClass):
     def test_google_search(self):
