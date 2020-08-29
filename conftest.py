@@ -42,12 +42,12 @@ def create_report_folder():
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
-    # set custom options only if none are provided from command line
+    ''' Updates the default configurations of pytes '''
+    # Create the project folder
     create_report_folder()
-    print(reports_dir)
     # custom report file
     report = reports_dir / "report.html"
-    # adjust plugin options
+    # adjust plugin options (Updating the report path)
     config.option.htmlpath = report
     config.option.self_contained_html = True
 
