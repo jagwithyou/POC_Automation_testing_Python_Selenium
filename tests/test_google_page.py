@@ -11,63 +11,47 @@ class TestGooglePage(BaseClass):
         ''' This is a test case to test the search page of Google.
         First it open a broeser with url specified in config (Google URL).
         Then it will search for a query.'''
-        # __tracebackhide__ = True
-        try:
-            #Instantiating the logger
-            log = self.getLogger()
-            log.info("Google Search Test Started")
-            #Instantiating the page
-            google_page= GooglePage(self.driver)
-            #accessing the search field and sending jag to that
-            google_page.get_search_bar().send_keys('jag')
-            #accessing the submit button and clicking it
-            google_page.get_submit_button().submit()
-            #logging the test success
-            log.info("Test Success")
-            assert True
-        except NoSuchElementException as e:
-            self.stop_test_execution(e)
+        #Instantiating the logger
+        log = self.getLogger()
+        log.info("Google Search Test Started")
+        #Instantiating the page
+        google_page= GooglePage(self.driver)
+        #accessing the search field and sending jag to that
+        google_page.get_search_bar().send_keys('jag')
+        #accessing the submit button and clicking it
+        google_page.get_submit_button().submit()
+        #logging the test success
+        log.info("Test Success")
+        assert True
     
     def test_2_google_search_assertion_failed(self):
         ''' This is the same google search testcase, but it will fail due to assertion error'''
-        # __tracebackhide__ = True
-        try:
-            #Instantiating the logger
-            log = self.getLogger()
-            log.info("Google Search Test Started")
-            #Instantiating the page
-            google_page= GooglePage(self.driver)
-            #accessing the search field and sending jag to that
-            google_page.get_search_bar().send_keys('jag')
-            #accessing the submit button and clicking it
-            google_page.get_submit_button().submit()
-            #logging the test success
-            log.info("Test Success")
-            assert False
-        except AssertionError as e:
-            self.stop_test_execution(e)
-        except NoSuchElementException as e:
-            self.stop_test_execution(e)
+        #Instantiating the logger
+        log = self.getLogger()
+        log.info("Google Search Test Started")
+        #Instantiating the page
+        google_page= GooglePage(self.driver)
+        #accessing the search field and sending jag to that
+        google_page.get_search_bar().send_keys('jag')
+        #accessing the submit button and clicking it
+        google_page.get_submit_button().submit()
+        #logging the test success
+        log.info("Test Success")
+        assert False
 
     def test_3_google_search_element_failed(self):
         ''' This is the same google search testcase, but it will fail due to element not folund error'''
-        # __tracebackhide__ = True
-        try:
-            #Instantiating the logger
-            log = self.getLogger()
-            log.info("Google Search Test Started")
-            #Instantiating the page
-            google_page= GooglePage(self.driver)
-            #accessing the search field and sending jag to that
-            google_page.get_search_bar_failed().send_keys('jag')
-            #accessing the submit button and clicking it
-            google_page.get_submit_button().submit()
-            #logging the test success
-            log.info("Test Success")
-            assert False
-        except AssertionError as e:
-            self.stop_test_execution(e)
-        except NoSuchElementException as e:
-            self.stop_test_execution(e)
+        #Instantiating the logger
+        log = self.getLogger()
+        log.info("Google Search Test Started")
+        #Instantiating the page
+        google_page= GooglePage(self.driver)
+        #accessing the search field and sending jag to that
+        google_page.get_search_bar_failed().send_keys('jag')
+        #accessing the submit button and clicking it
+        google_page.get_submit_button().submit()
+        #logging the test success
+        log.info("Test Success")
+        assert False
             
 

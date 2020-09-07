@@ -62,34 +62,27 @@ from py.xml import html
 import pytest
 
 def pytest_html_results_table_header(cells):
+    ''' Adds two columns (Description and time) to the report table '''
     cells.insert(2, html.th('Description'))
     cells.insert(3, html.th('Time', class_='sortable time', col='time'))
     cells.pop()
 
 def pytest_html_results_table_row(report, cells):
+    ''' Adds row two column values to the row '''
     cells.insert(2, html.td(report.description))
     cells.insert(3, html.td(datetime.utcnow(), class_='col-time'))
     cells.pop()
 
-# @pytest.hookimpl(hookwrapper=True)
-# def pytest_runtest_makereport(item, call):
-#     outcome = yield
-#     report = outcome.get_result()
-#     report.description = str(item.function.__doc__)
-
-
-
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """
-        Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
-        :param item:
-        """
+    Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
+    :param item:
+    """
     pytest_html = item.config.pluginmanager.getplugin('html')
     outcome = yield
     report = outcome.get_result()
     report.description = str(item.function.__doc__)
-
     extra = getattr(report, 'extra', [])
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
@@ -112,21 +105,6 @@ def _capture_screenshot(name):
     #save the screenshot
     driver.get_screenshot_as_file(reports_dir+'/'+name)
 
-
 def pytest_html_report_title(report):
-   report.title = "Google Page Test Report"
-
-
-
-# def pytest_html_results_table_html(report, data):
-#     if report.passed:
-#         del data[:]
-#         data.append(html.div('No log output captured.', class_='empty log'))
-
-# def pytest_html_results_table_html(report, data):
-#     if report.failed:
-#         for data in data:
-#             # print(str(data))
-#             print(str(data).split('<br/>'))
-#         # del data[:]
-#         data.append(html.div(str(data)))
+    ''' Adds title to the report '''
+    report.title = config.REPORT_TITLE

@@ -9,7 +9,6 @@ import config, pytest
 
 @pytest.mark.usefixtures("setup")
 class BaseClass:
-
     def getLogger(self):
         loggerName = inspect.stack()[1][3]
         logger = logging.getLogger(loggerName)
@@ -27,9 +26,3 @@ class BaseClass:
     def selectOptionByText(self,locator,text):
         sel = Select(locator)
         sel.select_by_visible_text(text)
-
-    def stop_test_execution(self, e):
-        if config.DETAILED_REPORT:
-            pytest.fail(e, False)
-        else:
-            pytest.fail('', False)
