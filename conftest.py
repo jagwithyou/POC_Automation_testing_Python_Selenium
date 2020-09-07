@@ -36,9 +36,14 @@ reports_dir = ''
 def create_report_folder():
     ''' Creates a report folder with the datetime stamp '''
     global reports_dir
-    # create report target dir
-    reports_dir = Path('reports', datetime.now().strftime('%y-%m-%d-%H-%M-%S'))
-    reports_dir.mkdir(parents=True, exist_ok=True)
+    # if config is set to create individual report then create individual report with timestamp else create single report
+    if config.INDIVIDUAL_REPORT:
+        reports_dir = Path('reports', datetime.now().strftime('%y-%m-%d-%H-%M-%S'))
+        reports_dir.mkdir(parents=True, exist_ok=True)
+    else:
+        reports_dir = Path('reports')
+        if not os.path.exists(reports_dir):
+            reports_dir.mkdir(parents=True, exist_ok=False)
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
@@ -51,6 +56,29 @@ def pytest_configure(config):
     config.option.htmlpath = report
     config.option.self_contained_html = True
 
+
+from datetime import datetime
+from py.xml import html
+import pytest
+
+def pytest_html_results_table_header(cells):
+    cells.insert(2, html.th('Description'))
+    cells.insert(3, html.th('Time', class_='sortable time', col='time'))
+    cells.pop()
+
+def pytest_html_results_table_row(report, cells):
+    cells.insert(2, html.td(report.description))
+    cells.insert(3, html.td(datetime.utcnow(), class_='col-time'))
+    cells.pop()
+
+# @pytest.hookimpl(hookwrapper=True)
+# def pytest_runtest_makereport(item, call):
+#     outcome = yield
+#     report = outcome.get_result()
+#     report.description = str(item.function.__doc__)
+
+
+
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """
@@ -60,6 +88,8 @@ def pytest_runtest_makereport(item):
     pytest_html = item.config.pluginmanager.getplugin('html')
     outcome = yield
     report = outcome.get_result()
+    report.description = str(item.function.__doc__)
+
     extra = getattr(report, 'extra', [])
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
@@ -77,6 +107,26 @@ def _capture_screenshot(name):
     global reports_dir
     #crate the test folder inside the report
     reports_dir = str(Path(reports_dir))
-    os.makedirs(reports_dir+'/tests')
+    if not os.path.exists(reports_dir+'/tests'):
+        os.makedirs(reports_dir+'/tests')
     #save the screenshot
     driver.get_screenshot_as_file(reports_dir+'/'+name)
+
+
+def pytest_html_report_title(report):
+   report.title = "Google Page Test Report"
+
+
+
+# def pytest_html_results_table_html(report, data):
+#     if report.passed:
+#         del data[:]
+#         data.append(html.div('No log output captured.', class_='empty log'))
+
+# def pytest_html_results_table_html(report, data):
+#     if report.failed:
+#         for data in data:
+#             # print(str(data))
+#             print(str(data).split('<br/>'))
+#         # del data[:]
+#         data.append(html.div(str(data)))

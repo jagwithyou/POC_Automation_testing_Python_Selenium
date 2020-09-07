@@ -1,2 +1,78 @@
-2020-08-29 20:00:17,273 :INFO : test_google_search :Google Search Test Started
-2020-08-29 20:04:30,210 :INFO : test_google_search :Google Search Test Started
+2020-09-07 18:38:27,838 :INFO : test_google_search :Google Search Test Started
+2020-09-07 18:55:02,677 :INFO : test_google_search :Google Search Test Started
+2020-09-07 18:55:42,499 :INFO : test_google_search :Google Search Test Started
+2020-09-07 18:59:30,280 :INFO : test_google_search :Google Search Test Started
+2020-09-07 18:59:44,021 :INFO : test_google_search :Google Search Test Started
+2020-09-07 18:59:44,021 :INFO : test_google_search :Google Search Test Started
+2020-09-07 19:11:41,856 :INFO : test_google_search :Google Search Test Started
+2020-09-07 19:11:42,310 :INFO : test_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:16:19,404 :INFO : test_google_search :Google Search Test Started
+2020-09-07 19:16:22,720 :INFO : test_google_search :Test Success
+2020-09-07 19:16:22,733 :INFO : test_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:16:24,911 :INFO : test_google_search_assertion_failed :Test Success
+2020-09-07 19:16:25,442 :INFO : test_google_search_element_failed :Google Search Test Started
+2020-09-07 19:25:06,375 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:25:10,063 :INFO : test_1_google_search :Test Success
+2020-09-07 19:25:10,102 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:25:12,527 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:25:12,975 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:28:16,189 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:28:19,197 :INFO : test_1_google_search :Test Success
+2020-09-07 19:28:19,232 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:28:21,229 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:28:21,713 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:31:17,544 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:31:21,090 :INFO : test_1_google_search :Test Success
+2020-09-07 19:31:21,105 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:31:23,529 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:31:23,951 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:33:24,387 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:33:32,291 :INFO : test_1_google_search :Test Success
+2020-09-07 19:33:32,326 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:33:33,869 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:33:34,398 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:38:47,911 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:38:51,193 :INFO : test_1_google_search :Test Success
+2020-09-07 19:38:51,211 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:38:53,514 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:38:54,009 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:41:46,472 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:41:51,389 :INFO : test_1_google_search :Test Success
+2020-09-07 19:41:51,405 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:41:53,262 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:41:53,745 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:42:13,145 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:42:17,532 :INFO : test_1_google_search :Test Success
+2020-09-07 19:42:17,547 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:42:18,744 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:42:19,289 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:43:01,520 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:43:04,823 :INFO : test_1_google_search :Test Success
+2020-09-07 19:43:04,835 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:43:06,363 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:43:06,782 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:46:17,090 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:46:19,958 :INFO : test_1_google_search :Test Success
+2020-09-07 19:46:19,975 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:46:21,670 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:46:22,066 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:54:53,408 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:54:58,961 :INFO : test_1_google_search :Test Success
+2020-09-07 19:54:58,996 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:55:01,893 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:55:02,335 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 19:56:05,353 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 19:56:08,474 :INFO : test_1_google_search :Test Success
+2020-09-07 19:56:08,487 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 19:56:10,546 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 19:56:10,971 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 20:00:40,798 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 20:00:43,828 :INFO : test_1_google_search :Test Success
+2020-09-07 20:00:43,843 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 20:00:44,719 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 20:00:45,294 :INFO : test_3_google_search_element_failed :Google Search Test Started
+2020-09-07 20:22:45,220 :INFO : test_1_google_search :Google Search Test Started
+2020-09-07 20:22:51,714 :INFO : test_1_google_search :Test Success
+2020-09-07 20:22:51,932 :INFO : test_2_google_search_assertion_failed :Google Search Test Started
+2020-09-07 20:22:54,210 :INFO : test_2_google_search_assertion_failed :Test Success
+2020-09-07 20:22:54,667 :INFO : test_3_google_search_element_failed :Google Search Test Started

@@ -1,0 +1,2 @@
+[32mINFO    [0m test_1_google_search:test_google_page.py:25 Google Search Test Started
+[32mINFO    [0m test_1_google_search:test_google_page.py:33 Test Success

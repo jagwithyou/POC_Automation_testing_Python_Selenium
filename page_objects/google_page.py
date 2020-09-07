@@ -1,9 +1,5 @@
 from locator.locator import *
-
-class BasePage(object):
-    ''' Base page setup with the driver '''
-    def __init__(self, driver):
-        self.driver = driver
+from page_objects import BasePage
 
 class GooglePage(BasePage):
     ''' Helps finding all the elements of the page '''
@@ -12,3 +8,6 @@ class GooglePage(BasePage):
     
     def get_submit_button(self):
         return self.driver.find_element(*GooglePageLocator.SUBMIT_BUTTON)
+    
+    def get_search_bar_failed(self):
+        return self.driver.find_element(*GooglePageLocator.SEARCH_BAR_FAILED)

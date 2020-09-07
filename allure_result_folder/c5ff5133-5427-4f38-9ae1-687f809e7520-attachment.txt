@@ -1,0 +1,2 @@
+[32mINFO    [0m test_2_google_search_assertion_failed:test_google_page.py:44 Google Search Test Started
+[32mINFO    [0m test_2_google_search_assertion_failed:test_google_page.py:52 Test Success
