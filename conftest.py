@@ -20,7 +20,22 @@ def setup(request):
     #Getting the driver name and instantiating the driver
     browser_name=request.config.getoption("browser_name")
     if browser_name == "chrome":
-        driver = webdriver.Chrome(executable_path=f"{config.DRIVER_PATH}\chromedriver.exe")
+        # print(config.DOWNLOAD_FOLDER)
+        #Configuring the Chrome browser
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_experimental_option("prefs", {
+        "download.default_directory": config.DOWNLOAD_FOLDER, 
+        "download.prompt_for_download": False,
+        "download.directory_upgrade": True,
+        "safebrowsing.enabled": True
+        })   
+        if config.HEADLESS:
+            chrome_options.add_argument('--headless')
+        #Instantiating the driver with the options
+        print("====================",config.DRIVER_PATH)
+        driver = webdriver.Chrome(executable_path=f"{config.DRIVER_PATH}\chromedriver.exe",  options=chrome_options)
+        # driver.accept_next_alert = True
+        # self.verificationErrors = []
     elif browser_name == "firefox":
         driver = webdriver.Firefox(executable_path=f"{config.DRIVER_PATH}\geckodriver.exe")
     elif browser_name == "IE":
@@ -103,7 +118,10 @@ def _capture_screenshot(name):
     if not os.path.exists(reports_dir+'/tests'):
         os.makedirs(reports_dir+'/tests')
     #save the screenshot
-    driver.get_screenshot_as_file(reports_dir+'/'+name)
+    try:
+        driver.get_screenshot_as_file(reports_dir+'/'+name)
+    except Exception as e:
+        print(e)
 
 def pytest_html_report_title(report):
     ''' Adds title to the report '''
